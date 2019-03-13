@@ -9,7 +9,9 @@ public class WebInitializer extends AbstractDispatcherServletInitializer {
 
     @Override
     protected WebApplicationContext createRootApplicationContext() {
-        return null;
+        AnnotationConfigWebApplicationContext cxt = new AnnotationConfigWebApplicationContext();
+        cxt.register(RootConfig.class);
+        return cxt;
     }
 
     @Override
